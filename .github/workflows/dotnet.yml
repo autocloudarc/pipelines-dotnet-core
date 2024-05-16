@@ -25,4 +25,16 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal\
+    - name: Publish
+      run: dotnet publish -c Release -o website
+    - name: Upload a Build Artifact for deployment job
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: webapp
+        path: website/**
+        if-no-files-found: warn      
+        retention-days: 3
+        compression-level: 6
+        overwrite: true
+          
