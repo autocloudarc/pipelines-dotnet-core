@@ -53,4 +53,17 @@ jobs:
         retention-days: 3
         compression-level: 6
         overwrite: true
-          
+        
+    # - uses: sethreidnz/azure-webapps-preview-deploy@latest 
+    #   env:
+    #     AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }} # you must set these as environment variables in order to use the Azure SDK tooling
+    #     AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+    #     AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+    #   with:
+    #     githubToken: ${{ secrets.GITHUB_TOKEN }} # the action will carry out in the context of your repository and use the github-actions user
+    #     subscriptionId: 'subscriptionId' # the subscription that contains the target WebApp
+    #     resourceGroup: 'resourceGroup' # the resource group that contains the target WebApp
+    #     webAppName: 'webAppName' # the target WebApp name
+    #     storageAccount: 'storageAccount' # the storage account name used for uploading deployment packages
+    #     storageContainer: 'storageContainer' # the storage container used for uploading deployment packages
+    #     deployPackagePath: 'deployPackagePath' # the path to a zipped deployment
